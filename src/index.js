@@ -1,10 +1,12 @@
-const state = {
+let state = {
   jobs: [],
   appointments: [],
   filters: {
     position: "",
     level: "",
-    language: "",
-    search: ""
-  }
+    languages: [],
+    search: "",
+  },
 };
+
+ 

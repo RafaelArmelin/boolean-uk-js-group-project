@@ -4,16 +4,81 @@
       "id": 1,
       "company": "Barclays",
       "position": "Software Engineer",
-      "salary": "$60K - $200K",
-      "language": "javascript",
+      "salary": {
+        "min": 60000,
+        "max": 120000
+      },
+      "languages": ["javascript", "react"],
       "experienceLevel": "junior",
-      "timeWhenPosted": "8d"
+      "timeWhenPosted": 8
+    }, 
+    {
+      "id": 2,
+      "company": "Udemy",
+      "position": "Frontend Engineer",
+      "salary": {
+        "min": 35000,
+        "max": 60000
+      },
+      "languages": ["javascript", "react", "angular"],
+      "experienceLevel": "junior",
+      "timeWhenPosted": 19
+    },
+    {
+      "id": 3,
+      "company": "SportyBet",
+      "position": "Backend Engineer",
+      "salary": {
+        "min": 40000,
+        "max": 95000
+      },
+      "languages": ["java", "mysql"],
+      "experienceLevel": "mid-level",
+      "timeWhenPosted": 2
+    },
+    {
+      "id": 4,
+      "company": "Storetasker",
+      "position": "Senior Shopify Developer",
+      "salary": {
+        "min": 70000,
+        "max": 200000
+      },
+      "languages": ["javascript", "php", "react"],
+      "experienceLevel": "senior",
+      "timeWhenPosted": 6
+    },
+    {
+      "id": 5,
+      "company": "Kodify Media Group",
+      "position": "Full Stack Developer",
+      "salary": {
+        "min": 60000,
+        "max": 150000
+      },
+      "languages": ["node", "react"],
+      "experienceLevel": "mid-level",
+      "timeWhenPosted": 1
+    },
+    {
+      "id": 6,
+      "company": "Colabra",
+      "position": "Senior Backend developer",
+      "salary": {
+        "min": 60000,
+        "max": 120000
+      },
+      "languages": ["javascript", "typescript", "nodejs"],
+      "experienceLevel": "senior",
+      "timeWhenPosted": 4
     }
   ],
   "appointments": [
     {
       "id": 1,
-      "jobId": "1"
+      "jobId": 1,
+      "date": "2021-08-10",
+      "time": "16:30"
     }
   ]
 }
