@@ -1,0 +1,4 @@
+{
+  "/appointments": "/appointments?_expand=job",
+  "/appointments/*": "/appointments/$1?_expand=job"
+}

@@ -1,0 +1,19 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "company": "Barclays",
+      "position": "Software Engineer",
+      "salary": "$60K - $200K",
+      "language": "javascript",
+      "experienceLevel": "junior",
+      "timeWhenPosted": "8d"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "jobId": "1"
+    }
+  ]
+}
