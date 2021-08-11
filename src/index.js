@@ -31,6 +31,47 @@ fetch("http://localhost:3000/jobs")
     };
 
     renderJobList(state.jobs);
+  });
+
+// POST METHOD
+// const fetchOptions = {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     state = {
+//       ...state,
+//       appointments: [{}]
+//     };
+//   })
+// }
+const appointmentToCreate = {
+  jobId: 1,
+  date: "2021-08-10",
+  time: "16:30"
+};
+
+const fetchOptions = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(appointmentToCreate)
+};
+
+fetch("http://localhost:3000/appointments", fetchOptions)
+  .then((res) => res.json())
+  .then((newAppointment) => {
+    console.log("Inside POST Fetch: ", newAppointment);
+
+    state = {
+      ...state,
+      appointments:[
+      
+      ]
+    }
+
     renderAppointmentsList(state.appointments);
   });
 

@@ -9,7 +9,10 @@
         "max": 120000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": ["javascript", "react"],
+      "technologies": [
+        "javascript",
+        "react"
+      ],
       "experienceLevel": "junior",
       "timeWhenPosted": 8
     },
@@ -22,7 +25,11 @@
         "max": 60000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": ["javascript", "react", "angular"],
+      "technologies": [
+        "javascript",
+        "react",
+        "angular"
+      ],
       "experienceLevel": "junior",
       "timeWhenPosted": 19
     },
@@ -35,7 +42,10 @@
         "max": 95000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": ["java", "mysql"],
+      "technologies": [
+        "java",
+        "mysql"
+      ],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 2
     },
@@ -48,7 +58,11 @@
         "max": 200000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": ["javascript", "php", "react"],
+      "technologies": [
+        "javascript",
+        "php",
+        "react"
+      ],
       "experienceLevel": "senior",
       "timeWhenPosted": 6
     },
@@ -61,7 +75,10 @@
         "max": 150000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": ["node", "react"],
+      "technologies": [
+        "node",
+        "react"
+      ],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 1
     },
@@ -74,7 +91,11 @@
         "max": 120000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": ["javascript", "typescript", "nodejs"],
+      "technologies": [
+        "javascript",
+        "typescript",
+        "nodejs"
+      ],
       "experienceLevel": "senior",
       "timeWhenPosted": 4
     }
@@ -85,6 +106,18 @@
       "jobId": 1,
       "date": "2021-08-10",
       "time": "16:30"
+    },
+    {
+      "jobId": 1,
+      "date": "2021-08-10",
+      "time": "16:30",
+      "id": 2
+    },
+    {
+      "jobId": 1,
+      "date": "2021-08-10",
+      "time": "16:30",
+      "id": 3
     }
   ]
 }
