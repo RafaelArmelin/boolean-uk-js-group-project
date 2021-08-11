@@ -62,6 +62,26 @@ console.log(appointments);
 
 // RENDER FUNCTIONS
 
+// TODO: Create header element and append to rootEl
+// TODO: Append to mainEl (Rafael created)
+
+const filterSectionEl = document.createElement("div");
+filterSectionEl.className = "filter-section";
+rootEl.append(filterSectionEl);
+
+const filterFormsWrapperEl = document.createElement("div");
+filterFormsWrapperEl.className = "filter-forms-wrapper";
+filterSectionEl.append(filterFormsWrapperEl);
+
+function renderFilterSection() {
+  renderFilterByPositionForm();
+  renderFilterByLevelForm();
+  renderFilterByTechnologyForm();
+  filterBySearch();
+}
+
+renderFilterSection();
+
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
