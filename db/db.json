@@ -8,6 +8,7 @@
         "min": 60000,
         "max": 120000
       },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
       "languages": ["javascript", "react"],
       "experienceLevel": "junior",
       "timeWhenPosted": 8
@@ -20,6 +21,7 @@
         "min": 35000,
         "max": 60000
       },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
       "languages": ["javascript", "react", "angular"],
       "experienceLevel": "junior",
       "timeWhenPosted": 19
@@ -32,6 +34,7 @@
         "min": 40000,
         "max": 95000
       },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
       "languages": ["java", "mysql"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 2
@@ -44,6 +47,7 @@
         "min": 70000,
         "max": 200000
       },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
       "languages": ["javascript", "php", "react"],
       "experienceLevel": "senior",
       "timeWhenPosted": 6
@@ -56,6 +60,7 @@
         "min": 60000,
         "max": 150000
       },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
       "languages": ["node", "react"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 1
@@ -68,6 +73,7 @@
         "min": 60000,
         "max": 120000
       },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
       "languages": ["javascript", "typescript", "nodejs"],
       "experienceLevel": "senior",
       "timeWhenPosted": 4
