@@ -169,6 +169,22 @@ function renderFilterByTechnologyForm() {
   });
 }
 
+function filterBySearch() {
+  const searchFormElem = document.createElement("form");
+  searchFormElem.id = "search-jobs-form";
+  searchFormElem.setAttribute("autocomplete", "off");
+  filterSectionEl.append(searchFormElem);
+
+  const searchBarInputElem = document.createElement("input");
+  searchBarInputElem.id = "search-jobs";
+  searchBarInputElem.setAttribute("name", "search-jobs");
+  searchBarInputElem.setAttribute("type", "text");
+  searchBarInputElem.setAttribute(
+    "placeholder",
+    "Search by position or language"
+  );
+  searchFormElem.append(searchBarInputElem);
+}
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
