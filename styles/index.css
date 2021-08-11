@@ -68,13 +68,6 @@
   background-color: #e4dbdb;
 }
 
-.appointments-list {
-  position: absolute;
-  right: 0;
-  top: 0;
-  /* display: none;
-  visibility: hidden; */
-}
 .jobCard{
     border: 2px solid black;
     border-radius: 5px;

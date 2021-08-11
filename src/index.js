@@ -3,6 +3,10 @@
 const rootEl = document.querySelector("#root");
 console.log(rootEl);
 
+const mainEl = document.createElement("main");
+  mainEl.className = ("main_class")
+  rootEl.append(mainEl);
+
 // STATE OBJECT
 
 let state = {
@@ -135,8 +139,8 @@ console.log(appointments);
 // TODO: Append to mainEl (Rafael created)
 
 const filterSectionEl = document.createElement("div");
-filterSectionEl.className = "filter-section";
-rootEl.append(filterSectionEl);
+filterSectionEl.className = ("filter-section");
+mainEl.append(filterSectionEl);
 
 const filterFormsWrapperEl = document.createElement("div");
 filterFormsWrapperEl.className = "filter-forms-wrapper";
@@ -255,91 +259,27 @@ function filterBySearch() {
   searchFormElem.append(searchBarInputElem);
 }
 
-function renderAppointmentsButton() {
-  const filterSectionEl = document.querySelector(".filter-section");
+// function renderAppointmentsButton() {
+//   const filterSectionEl = document.querySelector(".filter-section");
 
-  const appointmentsWrapperEl = document.createElement("div");
-  appointmentsWrapperEl.className = "appointments-wrapper";
-  filterSectionEl.append(appointmentsWrapperEl);
+//   const appointmentsWrapperEl = document.createElement("div");
+//   appointmentsWrapperEl.className = "appointments-wrapper";
+//   filterSectionEl.append(appointmentsWrapperEl);
 
-  const appointmentsButtonEl = document.createElement("button");
-  appointmentsButtonEl.className = "appointments-button";
-  appointmentsButtonEl.innerText = "My appointments";
-  appointmentsButtonEl.addEventListener("click", (event) => {
-    console.log("click");
-  });
-  appointmentsWrapperEl.append(appointmentsButtonEl);
+//   const appointmentsButtonEl = document.createElement("button");
+//   appointmentsButtonEl.className = "appointments-button";
+//   appointmentsButtonEl.innerText = "My appointments";
+//   appointmentsButtonEl.addEventListener("click", (event) => {
+//     console.log("click");
+//   });
+//   appointmentsWrapperEl.append(appointmentsButtonEl);
 
-  const appointmentsListWrapperEl = document.createElement("div");
-  appointmentsListWrapperEl.className = "appointments-list";
-  appointmentsWrapperEl.append(appointmentsListWrapperEl);
-}
-renderAppointmentsButton();
-
-function renderAppointmentsList(appointments) {
-  console.log("Inside renderAppointmentsList: ", appointments);
-
-  const appointmentsListWrapperEl =
-    document.querySelector(".appointments-list");
-
-  const appointmentsWrapperEl = document.createElement("div");
-  appointmentsWrapperEl.className = "appointment-wrapper";
-  appointmentsListWrapperEl.append(appointmentsWrapperEl);
-
-  const ulEl = document.createElement("ul");
-  appointmentsWrapperEl.append(ulEl);
-
-  appointments.forEach((appointment) => {
-    const appointmentCardEl = document.createElement("li");
-    appointmentCardEl.className = "appointment-card";
-    ulEl.append(appointmentCardEl);
-
-    const headingEl = document.createElement("h3");
-    headingEl.className = "appointment-heading";
-    headingEl.innerText = `${appointment.job.company}`;
-    appointmentCardEl.append(headingEl);
-
-    const dateWrapperEl = document.createElement("div");
-    appointmentCardEl.append(dateWrapperEl);
-
-    const dateSpanEl = document.createElement("span");
-    dateSpanEl.innerText = "Date: ";
-    dateWrapperEl.append(dateSpanEl);
-
-    const dateEl = document.createElement("span");
-    dateEl.className = "date-element";
-    dateEl.innerText = `${appointment.date}`;
-    dateWrapperEl.append(dateEl);
-
-    const timeWrapperEl = document.createElement("div");
-    appointmentCardEl.append(timeWrapperEl);
-
-    const timeSpanEl = document.createElement("span");
-    timeSpanEl.innerText = "Time: ";
-    timeWrapperEl.append(timeSpanEl);
-
-    const timeEl = document.createElement("span");
-    timeEl.className = "time-element";
-    timeEl.innerText = `${appointment.time}`;
-    timeWrapperEl.append(timeEl);
-
-    const cancelButtonEl = document.createElement("button");
-    cancelButtonEl.className = "cancel-button";
-    cancelButtonEl.innerText = "Cancel";
-    appointmentCardEl.append(cancelButtonEl);
-  });
-}
-
-renderAppointmentsList(appointments);
-const rootEl = document.querySelector("#root")
-console.log("ROOT: ", rootEl);
-
-
-
+//   const appointmentsListWrapperEl = document.createElement("div");
+//   appointmentsListWrapperEl.className = "appointments-list";
+//   appointmentsWrapperEl.append(appointmentsListWrapperEl);
+// }
+// renderAppointmentsButton();
 function renderJobList(jobs){
-
-  const mainEl = document.createElement("main");
-  rootEl.append(mainEl);
 
   const divEl = document.createElement("div");
   mainEl.append(divEl);
@@ -396,3 +336,65 @@ function renderJobList(jobs){
   
 }
 renderJobList(jobs);
+
+function renderAppointmentsList(appointments) {
+  console.log("Inside renderAppointmentsList: ", appointments);
+
+  const asideEl = document.createElement("aside");
+  mainEl.append(asideEl);
+
+  // const appointmentsListWrapperEl =
+  //   document.querySelector(".appointments-list");
+
+  const appointmentsWrapperEl = document.createElement("div");
+  appointmentsWrapperEl.className = "appointment-wrapper";
+  asideEl.append(appointmentsWrapperEl);
+
+  const ulEl = document.createElement("ul");
+  appointmentsWrapperEl.append(ulEl);
+
+  appointments.forEach((appointment) => {
+    const appointmentCardEl = document.createElement("li");
+    appointmentCardEl.className = "appointment-card";
+    ulEl.append(appointmentCardEl);
+
+    const headingEl = document.createElement("h3");
+    headingEl.className = "appointment-heading";
+    headingEl.innerText = `${appointment.job.company}`;
+    appointmentCardEl.append(headingEl);
+
+    const dateWrapperEl = document.createElement("div");
+    appointmentCardEl.append(dateWrapperEl);
+
+    const dateSpanEl = document.createElement("span");
+    dateSpanEl.innerText = "Date: ";
+    dateWrapperEl.append(dateSpanEl);
+
+    const dateEl = document.createElement("span");
+    dateEl.className = "date-element";
+    dateEl.innerText = `${appointment.date}`;
+    dateWrapperEl.append(dateEl);
+
+    const timeWrapperEl = document.createElement("div");
+    appointmentCardEl.append(timeWrapperEl);
+
+    const timeSpanEl = document.createElement("span");
+    timeSpanEl.innerText = "Time: ";
+    timeWrapperEl.append(timeSpanEl);
+
+    const timeEl = document.createElement("span");
+    timeEl.className = "time-element";
+    timeEl.innerText = `${appointment.time}`;
+    timeWrapperEl.append(timeEl);
+
+    const cancelButtonEl = document.createElement("button");
+    cancelButtonEl.className = "cancel-button";
+    cancelButtonEl.innerText = "Cancel";
+    appointmentCardEl.append(cancelButtonEl);
+  });
+}
+renderAppointmentsList(appointments);
+
+// renderAppointmentsList(appointments);
+
+
