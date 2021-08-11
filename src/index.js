@@ -4,8 +4,8 @@ const rootEl = document.querySelector("#root");
 console.log(rootEl);
 
 const mainEl = document.createElement("main");
-  mainEl.className = ("main_class")
-  rootEl.append(mainEl);
+mainEl.className = "main_class";
+rootEl.append(mainEl);
 
 // STATE OBJECT
 
@@ -37,10 +37,9 @@ fetch("http://localhost:3000/jobs")
 // RENDER FUNCTIONS
 
 // TODO: Create header element and append to rootEl
-// TODO: Append to mainEl (Rafael created)
 
 const filterSectionEl = document.createElement("div");
-filterSectionEl.className = ("filter-section");
+filterSectionEl.className = "filter-section";
 mainEl.append(filterSectionEl);
 
 const filterFormsWrapperEl = document.createElement("div");
@@ -160,92 +159,62 @@ function filterBySearch() {
   searchFormElem.append(searchBarInputElem);
 }
 
-// function renderAppointmentsButton() {
-//   const filterSectionEl = document.querySelector(".filter-section");
-
-//   const appointmentsWrapperEl = document.createElement("div");
-//   appointmentsWrapperEl.className = "appointments-wrapper";
-//   filterSectionEl.append(appointmentsWrapperEl);
-
-//   const appointmentsButtonEl = document.createElement("button");
-//   appointmentsButtonEl.className = "appointments-button";
-//   appointmentsButtonEl.innerText = "My appointments";
-//   appointmentsButtonEl.addEventListener("click", (event) => {
-//     console.log("click");
-//   });
-//   appointmentsWrapperEl.append(appointmentsButtonEl);
-
-//   const appointmentsListWrapperEl = document.createElement("div");
-//   appointmentsListWrapperEl.className = "appointments-list";
-//   appointmentsWrapperEl.append(appointmentsListWrapperEl);
-// }
-// renderAppointmentsButton();
-function renderJobList(jobs){
-
+function renderJobList(jobs) {
   const divEl = document.createElement("div");
   mainEl.append(divEl);
 
   const listEl = document.createElement("ul");
-  listEl.className = ("cardList","center");
-  // listEl.className = ("center");
+  listEl.className = ("cardList", "center");
   divEl.append(listEl);
 
-
-  for(let i=0; i < jobs.length; i++){
-
+  for (let i = 0; i < jobs.length; i++) {
     const job = jobs[i];
 
-  const listItemEl = document.createElement("li");
-  listItemEl.className = ("jobCard")
-  listEl.append(listItemEl);
+    const listItemEl = document.createElement("li");
+    listItemEl.className = "jobCard";
+    listEl.append(listItemEl);
 
-  const headingEl = document.createElement("h2");
-  headingEl.innerText = `Company: ${job.company}`;
-  
-  listItemEl.append(headingEl);
+    const headingEl = document.createElement("h2");
+    headingEl.innerText = `Company: ${job.company}`;
 
-  const paragraphEl = document.createElement("p");
-  paragraphEl.innerText = `Position: ${job.position}`;
-  listItemEl.append(paragraphEl);
+    listItemEl.append(headingEl);
 
-  const spanEl = document.createElement("span");
-  spanEl.innerText = `Salary: $${job.salary.min} - $${job.salary.max}`;
-  listItemEl.append(spanEl);  
+    const paragraphEl = document.createElement("p");
+    paragraphEl.innerText = `Position: ${job.position}`;
+    listItemEl.append(paragraphEl);
 
-  const descriptionEl = document.createElement("p");
-  descriptionEl.innerText = `Description: ${job.description}`
-  listItemEl.append(descriptionEl);
+    const spanEl = document.createElement("span");
+    spanEl.innerText = `Salary: $${job.salary.min} - $${job.salary.max}`;
+    listItemEl.append(spanEl);
 
-  const technologiesDivEl = document.createElement("div");
-  technologiesDivEl.className = ("div_container")
-  listItemEl.append(technologiesDivEl);
+    const descriptionEl = document.createElement("p");
+    descriptionEl.innerText = `Description: ${job.description}`;
+    listItemEl.append(descriptionEl);
 
-  for(let i=0; i<job.technologies.length; i++){
+    const technologiesDivEl = document.createElement("div");
+    technologiesDivEl.className = "div_container";
+    listItemEl.append(technologiesDivEl);
 
-  const technology = job.technologies[i];
+    for (let i = 0; i < job.technologies.length; i++) {
+      const technology = job.technologies[i];
 
-  const technologiesEl = document.createElement("div");
-  technologiesEl.innerText = `${technology}`;
-  technologiesEl.className = "technologies_bt_style"
-  technologiesDivEl.append(technologiesEl);
+      const technologiesEl = document.createElement("div");
+      technologiesEl.innerText = `${technology}`;
+      technologiesEl.className = "technologies_bt_style";
+      technologiesDivEl.append(technologiesEl);
+    }
+
+    const buttonEl = document.createElement("button");
+    buttonEl.innerText = "Book Interview";
+    listItemEl.append(buttonEl);
   }
-
-  const buttonEl = document.createElement("button");
-  buttonEl.innerText = "Book Interview";
-  listItemEl.append(buttonEl);
-  }
-  
 }
-renderJobList(jobs);
 
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
   const asideEl = document.createElement("aside");
   mainEl.append(asideEl);
-
-  // const appointmentsListWrapperEl =
-  //   document.querySelector(".appointments-list");
 
   const appointmentsWrapperEl = document.createElement("div");
   appointmentsWrapperEl.className = "appointment-wrapper";
@@ -294,8 +263,3 @@ function renderAppointmentsList(appointments) {
     appointmentCardEl.append(cancelButtonEl);
   });
 }
-renderAppointmentsList(appointments);
-
-// renderAppointmentsList(appointments);
-
-
