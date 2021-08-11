@@ -11,7 +11,7 @@ let state = {
   filters: {
     position: "",
     level: "",
-    languages: [],
+    technologies: [],
     search: "",
   },
 };
@@ -33,7 +33,7 @@ const appointments = [
         min: 60000,
         max: 120000,
       },
-      languages: ["javascript", "react"],
+      technologies: ["javascript", "react"],
       experienceLevel: "junior",
       timeWhenPosted: 8,
     },
@@ -51,7 +51,7 @@ const appointments = [
         min: 35000,
         max: 60000,
       },
-      languages: ["javascript", "react", "angular"],
+      technologies: ["javascript", "react", "angular"],
       experienceLevel: "junior",
       timeWhenPosted: 19,
     },
