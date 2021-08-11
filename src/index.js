@@ -20,118 +20,19 @@ let state = {
   },
 };
 
-const jobs = [
-  
-     {
-      id: 1,
-      company: "Barclays",
-      position: "Software Engineer",
-      salary: {
-        min: 60000,
-        max: 120000,
-      },
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      technologies: ["javascript", "react"],
-      experienceLevel: "junior",
-      timeWhenPosted: 8,
-    },
-    {
-      id: 1,
-      company: "Apple",
-      position: "Software Engineer",
-      salary: {
-        min: 60000,
-        max: 120000,
-      },
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      technologies: ["javascript", "react"],
-      experienceLevel: "junior",
-      timeWhenPosted: 8,
-    },
-    {
-      id: 1,
-      company: "Amazon",
-      position: "Senior Shopify Developer",
-      salary: {
-        min: 60000,
-        max: 120000,
-      },
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      technologies: ["javascript", "react"],
-      experienceLevel: "junior",
-      timeWhenPosted: 8,
-    },
-    {
-      id: 1,
-      company: "Starbucks",
-      position: "Software Engineer",
-      salary: {
-        min: 60000,
-        max: 120000,
-      },
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      technologies: ["javascript", "react"],
-      experienceLevel: "junior",
-      timeWhenPosted: 8,
-    },
-    {
-      id: 1,
-      company: "Google",
-      position: "Software Engineer",
-      salary: {
-        min: 60000,
-        max: 120000,
-      },
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      technologies: ["JavaScript", " React", "PHP"],
-      experienceLevel: "junior",
-      timeWhenPosted: 8,
-    },
-];
+// FETCH FUNCTIONS
+fetch("http://localhost:3000/jobs")
+  .then((res) => res.json())
+  .then((jobsData) => {
+    console.log("Inside fetch jobsData: ", jobsData);
+    state = {
+      ...state,
+      jobs: jobsData,
+    };
 
-console.log(state);
-
-//  DUMMY DATA
-const appointments = [
-  {
-    id: 1,
-    jobId: 1,
-    date: "2021-08-10",
-    time: "16:30",
-    job: {
-      id: 1,
-      company: "Barclays",
-      position: "Software Engineer",
-      salary: {
-        min: 60000,
-        max: 120000,
-      },
-      technologies: ["javascript", "react"],
-      experienceLevel: "junior",
-      timeWhenPosted: 8,
-    },
-  },
-  {
-    id: 2,
-    jobId: 2,
-    date: "2021-08-10",
-    time: "16:30",
-    job: {
-      id: 2,
-      company: "Udemy",
-      position: "Frontend Engineer",
-      salary: {
-        min: 35000,
-        max: 60000,
-      },
-      technologies: ["javascript", "react", "angular"],
-      experienceLevel: "junior",
-      timeWhenPosted: 19,
-    },
-  },
-];
-
-console.log(appointments);
+    renderJobList(state.jobs);
+    renderAppointmentsList(state.appointments);
+  });
 
 // RENDER FUNCTIONS
 
