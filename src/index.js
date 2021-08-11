@@ -210,8 +210,15 @@ renderAppointmentsButton();
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
+  const appointmentsListWrapperEl =
+    document.querySelector(".appointments-list");
+
+  const appointmentsWrapperEl = document.createElement("div");
+  appointmentsWrapperEl.className = "appointment-wrapper";
+  appointmentsListWrapperEl.append(appointmentsWrapperEl);
+
   const ulEl = document.createElement("ul");
-  rootEl.append(ulEl);
+  appointmentsWrapperEl.append(ulEl);
 
   appointments.forEach((appointment) => {
     const appointmentCardEl = document.createElement("li");
