@@ -8,10 +8,10 @@
         "min": 60000,
         "max": 120000
       },
-      "languages": ["javascript", "react"],
+      "technologies": ["javascript", "react"],
       "experienceLevel": "junior",
       "timeWhenPosted": 8
-    }, 
+    },
     {
       "id": 2,
       "company": "Udemy",
@@ -20,7 +20,7 @@
         "min": 35000,
         "max": 60000
       },
-      "languages": ["javascript", "react", "angular"],
+      "technologies": ["javascript", "react", "angular"],
       "experienceLevel": "junior",
       "timeWhenPosted": 19
     },
@@ -32,7 +32,7 @@
         "min": 40000,
         "max": 95000
       },
-      "languages": ["java", "mysql"],
+      "technologies": ["java", "mysql"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 2
     },
@@ -44,7 +44,7 @@
         "min": 70000,
         "max": 200000
       },
-      "languages": ["javascript", "php", "react"],
+      "technologies": ["javascript", "php", "react"],
       "experienceLevel": "senior",
       "timeWhenPosted": 6
     },
@@ -56,7 +56,7 @@
         "min": 60000,
         "max": 150000
       },
-      "languages": ["node", "react"],
+      "technologies": ["node", "react"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 1
     },
@@ -68,7 +68,7 @@
         "min": 60000,
         "max": 120000
       },
-      "languages": ["javascript", "typescript", "nodejs"],
+      "technologies": ["javascript", "typescript", "nodejs"],
       "experienceLevel": "senior",
       "timeWhenPosted": 4
     }
