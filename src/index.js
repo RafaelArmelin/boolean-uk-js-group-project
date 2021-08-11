@@ -82,6 +82,31 @@ function renderFilterSection() {
 
 renderFilterSection();
 
+function renderFilterByPositionForm() {
+  const positionFormEl = document.createElement("form");
+  positionFormEl.id = "position-form";
+  filterFormsWrapperEl.append(positionFormEl);
+
+  const positionSelectEl = document.createElement("select");
+  positionSelectEl.id = "positions";
+  positionSelectEl.name = "positions";
+  positionFormEl.append(positionSelectEl);
+
+  const defaultOptionEl = document.createElement("option");
+  defaultOptionEl.setAttribute("value", "");
+  defaultOptionEl.innerText = "Filter by position";
+  positionSelectEl.append(defaultOptionEl);
+
+  const positions = ["front-end", "back-end", "full-stack"];
+  positions.forEach((position) => {
+    const positionOptionEl = document.createElement("option");
+    positionOptionEl.setAttribute("value", `${position}`);
+    positionOptionEl.innerText = `${
+      position.charAt(0).toUpperCase() + position.slice(1)
+    }`;
+    positionSelectEl.append(positionOptionEl);
+  });
+}
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
