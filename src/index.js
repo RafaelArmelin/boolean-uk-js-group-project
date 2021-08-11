@@ -185,6 +185,28 @@ function filterBySearch() {
   );
   searchFormElem.append(searchBarInputElem);
 }
+
+function renderAppointmentsButton() {
+  const filterSectionEl = document.querySelector(".filter-section");
+
+  const appointmentsWrapperEl = document.createElement("div");
+  appointmentsWrapperEl.className = "appointments-wrapper";
+  filterSectionEl.append(appointmentsWrapperEl);
+
+  const appointmentsButtonEl = document.createElement("button");
+  appointmentsButtonEl.className = "appointments-button";
+  appointmentsButtonEl.innerText = "My appointments";
+  appointmentsButtonEl.addEventListener("click", (event) => {
+    console.log("click");
+  });
+  appointmentsWrapperEl.append(appointmentsButtonEl);
+
+  const appointmentsListWrapperEl = document.createElement("div");
+  appointmentsListWrapperEl.className = "appointments-list";
+  appointmentsWrapperEl.append(appointmentsListWrapperEl);
+}
+renderAppointmentsButton();
+
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
