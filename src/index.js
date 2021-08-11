@@ -134,6 +134,41 @@ function renderFilterByLevelForm() {
   });
 }
 
+function renderFilterByTechnologyForm() {
+  const technologyFormEl = document.createElement("form");
+  technologyFormEl.id = "technology-form";
+  filterFormsWrapperEl.append(technologyFormEl);
+
+  const technologySelectEl = document.createElement("select");
+  technologySelectEl.id = "technologies";
+  technologySelectEl.name = "technologies";
+  technologyFormEl.append(technologySelectEl);
+
+  const defaultOptionEl = document.createElement("option");
+  defaultOptionEl.setAttribute("value", "");
+  defaultOptionEl.innerText = "Technology";
+  technologySelectEl.append(defaultOptionEl);
+
+  const technologies = [
+    "javascript",
+    "react",
+    "java",
+    "angular",
+    "mysql",
+    "php",
+    "typescript",
+    "nodejs",
+  ];
+  technologies.forEach((technology) => {
+    const technologyOptionEl = document.createElement("option");
+    technologyOptionEl.setAttribute("value", `${technology}`);
+    technologyOptionEl.innerText = `${
+      technology.charAt(0).toUpperCase() + technology.slice(1)
+    }`;
+    technologySelectEl.append(technologyOptionEl);
+  });
+}
+
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
