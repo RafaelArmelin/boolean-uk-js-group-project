@@ -107,6 +107,33 @@ function renderFilterByPositionForm() {
     positionSelectEl.append(positionOptionEl);
   });
 }
+
+function renderFilterByLevelForm() {
+  const levelFormEl = document.createElement("form");
+  levelFormEl.id = "level-form";
+  filterFormsWrapperEl.append(levelFormEl);
+
+  const levelSelectEl = document.createElement("select");
+  levelSelectEl.id = "levels";
+  levelSelectEl.name = "levels";
+  levelFormEl.append(levelSelectEl);
+
+  const defaultOptionEl = document.createElement("option");
+  defaultOptionEl.setAttribute("value", "");
+  defaultOptionEl.innerText = "Experience level";
+  levelSelectEl.append(defaultOptionEl);
+
+  const levels = ["junior", "mid-level", "senior"];
+  levels.forEach((level) => {
+    const levelOptionEl = document.createElement("option");
+    levelOptionEl.setAttribute("value", `${level}`);
+    levelOptionEl.innerText = `${
+      level.charAt(0).toUpperCase() + level.slice(1)
+    }`;
+    levelSelectEl.append(levelOptionEl);
+  });
+}
+
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
