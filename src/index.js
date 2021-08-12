@@ -221,11 +221,14 @@ function renderJobList(jobs) {
     const buttonEl = document.createElement("button");
     buttonEl.innerText = "Book Interview";
     listItemEl.append(buttonEl);
-    buttonEl.addEventListener("click", event =>{
-    console.log("clicked")
-    
-    renderBookingForm()
-  })
+    buttonEl.addEventListener("click", () => {
+      state = {
+        ...state,
+        selectedJob: job,
+      };
+
+      renderBookingForm();
+    });
   }
 }
 
