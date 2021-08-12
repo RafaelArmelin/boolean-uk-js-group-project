@@ -154,6 +154,29 @@ function renderFilterByTechnologyForm() {
     inputEl.setAttribute("type", "checkbox");
     inputEl.setAttribute("name", "technology");
     inputEl.setAttribute("value", `${technology}`);
+    inputEl.addEventListener("change", (event)=>{
+      console.log("change", event.target.value);
+      if (event.target.checked){
+        state = {
+          ...state,
+          filters: {
+            ...state.filters,
+            technologies: [...state.filters.technologies, technology],
+          },
+        };
+      } else if (!event.target.checked){
+        const filteredTechnologies = state.filters.technologies.filter(technology => technology !== event.target.value);
+        state = {
+          ...state,
+          filters: {
+            ...state.filters,
+            technologies: filteredTechnologies
+          },
+        };
+      };
+      console.log(state);
+      renderJobList(state.jobs)
+    })
 
     technologyFormEl.append(inputEl);
 
@@ -206,8 +229,10 @@ function renderJobList(jobs) {
   listEl.className = ("cardList", "center");
   divEl.append(listEl);
 
-  for (let i = 0; i < jobs.length; i++) {
-    const job = jobs[i];
+  const filteredJobs = applyUserfilters(state.jobs)
+
+  for (let i = 0; i < filteredJobs.length; i++) {
+    const job = filteredJobs[i];
 
     const listItemEl = document.createElement("li");
     listItemEl.className = "jobCard";
@@ -219,7 +244,7 @@ function renderJobList(jobs) {
     listItemEl.append(headingEl);
 
     const paragraphEl = document.createElement("p");
-    paragraphEl.innerText = `Position: ${job.position}`;
+    paragraphEl.innerText = `Position: ${job.jobPosition}`;
     listItemEl.append(paragraphEl);
 
     const spanEl = document.createElement("span");
@@ -386,4 +411,17 @@ function renderBookingForm() {
   confirmButtonEl.setAttribute("value", "Confirm Booking");
   confirmButtonEl.setAttribute("type", "submit");
   formEl.append(confirmButtonEl);
+}
+
+function applyUserfilters(jobs){
+
+  const filteredByPosition = filterByPosition(jobs)
+  return filteredByPosition;
+}
+
+function filterByPosition(jobs){
+  if (state.filters.position === ""){
+    return jobs;
+  }
+  const filteredJobs = jobs.filter(job => job.position === state.filters.position)
 }
