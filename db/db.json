@@ -3,7 +3,8 @@
     {
       "id": 1,
       "company": "Barclays",
-      "position": "Software Engineer",
+      "jobPosition": "Software Engineer",
+      "position": "front-end",
       "salary": {
         "min": 60000,
         "max": 120000
@@ -19,7 +20,8 @@
     {
       "id": 2,
       "company": "Udemy",
-      "position": "Frontend Engineer",
+      "jobPosition": "Frontend Engineer",
+      "position": "front-end",
       "salary": {
         "min": 35000,
         "max": 60000
@@ -36,7 +38,8 @@
     {
       "id": 3,
       "company": "SportyBet",
-      "position": "Backend Engineer",
+      "jobPosition": "Backend Engineer",
+      "position": "back-end",
       "salary": {
         "min": 40000,
         "max": 95000
@@ -52,7 +55,8 @@
     {
       "id": 4,
       "company": "Storetasker",
-      "position": "Senior Shopify Developer",
+      "jobPosition": "Senior Shopify Developer",
+      "position": "full-stack",
       "salary": {
         "min": 70000,
         "max": 200000
@@ -69,7 +73,8 @@
     {
       "id": 5,
       "company": "Kodify Media Group",
-      "position": "Full Stack Developer",
+      "jobPosition": "Full Stack Developer",
+      "position": "full-stack",
       "salary": {
         "min": 60000,
         "max": 150000
@@ -85,7 +90,8 @@
     {
       "id": 6,
       "company": "Colabra",
-      "position": "Senior Backend developer",
+      "jobPosition": "Senior Backend developer",
+      "position": "back-end",
       "salary": {
         "min": 60000,
         "max": 120000
@@ -220,6 +226,18 @@
       "date": "2021-08-26",
       "time": "18:24",
       "id": 20
+    },
+    {
+      "jobId": 1,
+      "date": "2021-08-27",
+      "time": "01:47",
+      "id": 21
+    },
+    {
+      "jobId": 6,
+      "date": "2021-08-26",
+      "time": "00:46",
+      "id": 22
     }
   ]
 }
