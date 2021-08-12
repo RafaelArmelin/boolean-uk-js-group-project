@@ -100,6 +100,17 @@ function renderFilterByLevelForm() {
   const levelSelectEl = document.createElement("select");
   levelSelectEl.id = "levels";
   levelSelectEl.name = "levels";
+  levelSelectEl.addEventListener("change", (event)=>{
+    console.log("change");
+    state = {
+      ...state,
+      filters: {
+        ...state.filters,
+        level: event.target.value
+      }
+    }
+    console.log(state);
+  })
   levelFormEl.append(levelSelectEl);
 
   const defaultOptionEl = document.createElement("option");
