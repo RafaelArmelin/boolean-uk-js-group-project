@@ -11,6 +11,7 @@ rootEl.append(mainEl);
 
 let state = {
   jobs: [],
+  selectedJob: null,
   appointments: [],
   filters: {
     position: "",
