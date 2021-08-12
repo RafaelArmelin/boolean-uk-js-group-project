@@ -50,7 +50,7 @@ function renderFilterSection() {
   renderFilterByTechnologyForm();
   renderFilterByPositionForm();
   renderFilterByLevelForm();
-  filterBySearch();
+  renderFilterBySearch();
 }
 
 renderFilterSection();
