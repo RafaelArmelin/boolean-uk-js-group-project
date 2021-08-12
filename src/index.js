@@ -111,6 +111,7 @@ function renderFilterByLevelForm() {
       },
     };
     console.log(state);
+    renderJobList(state.jobs);
   });
   levelFormEl.append(levelSelectEl);
 
@@ -193,7 +194,7 @@ function renderFilterByTechnologyForm() {
   });
 }
 
-function filterBySearch() {
+function renderFilterBySearch() {
   const searchFormElem = document.createElement("form");
   searchFormElem.id = "search-jobs-form";
   searchFormElem.setAttribute("autocomplete", "off");
