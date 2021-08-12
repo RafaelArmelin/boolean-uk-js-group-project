@@ -224,7 +224,7 @@ function renderFilterBySearch() {
   searchBarInputElem.setAttribute("type", "text");
   searchBarInputElem.setAttribute(
     "placeholder",
-    "Search by position or language"
+    "Search by position or technology"
   );
   searchFormElem.append(searchBarInputElem);
 }
@@ -425,7 +425,8 @@ function applyUserfilters(jobs) {
   const filteredByPosition = filterByPosition(jobs);
   const filteredByLevel = filterByLevel(filteredByPosition);
   const filteredBySearch = filterBySearch(filteredByLevel);
-  return filteredBySearch;
+  const filteredByTechnology = filterByTechnology(filteredBySearch);
+  return filteredByTechnology;
 }
 
 function filterByPosition(jobs) {
@@ -459,5 +460,26 @@ function filterBySearch(jobs) {
       job.jobPosition.toLowerCase().includes(state.filters.search) ||
       job.technologies.includes(state.filters.search)
   );
+  return filteredJobs;
+}
+
+function filterByTechnology(jobs) {
+  if (state.filters.technologies.length === 0) {
+    return jobs;
+  }
+
+  const filteredJobs = jobs.filter((job) => {
+    /* 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+    
+    The some() method executes the arrow function once for each object present 
+    in the state.filters.technologies array until it finds the one where arrow function returns 
+    a truthy value (if job.technologies.includes(technology) evaluates to true).
+    */
+    return state.filters.technologies.some((technology) =>
+      job.technologies.includes(technology)
+    );
+  });
+  console.log("filtered jobs: ", filteredJobs);
   return filteredJobs;
 }
