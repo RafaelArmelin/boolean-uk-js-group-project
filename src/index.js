@@ -429,5 +429,15 @@ function filterByPosition(jobs) {
   if (state.filters.position === "") {
     return jobs;
   }
-  return jobs.filter((job) => job.position === state.filters.position);
+
+function filterByLevel(jobs) {
+  if (state.filters.level === "") {
+    return jobs;
+  }
+
+  const filteredJobs = jobs.filter(
+    (job) => job.experienceLevel === state.filters.level
+  );
+  return filteredJobs;
+}
 }
