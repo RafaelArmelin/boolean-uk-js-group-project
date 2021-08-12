@@ -440,4 +440,15 @@ function filterByLevel(jobs) {
   );
   return filteredJobs;
 }
+
+function filterBySearch(jobs) {
+  if (state.filters.search === "") {
+    return jobs;
+  }
+  const filteredJobs = jobs.filter(
+    (job) =>
+      job.jobPosition.toLowerCase().includes(state.filters.search) ||
+      job.technologies.includes(state.filters.search)
+  );
+  return filteredJobs;
 }
