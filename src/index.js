@@ -30,23 +30,8 @@ fetch("http://localhost:3000/jobs")
       ...state,
       jobs: jobsData,
     };
-
     renderJobList(state.jobs);
   });
-
-// POST METHOD
-// const fetchOptions = {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify({
-//     state = {
-//       ...state,
-//       appointments: [{}]
-//     };
-//   })
-// }
 
 // RENDER FUNCTIONS
 
@@ -286,51 +271,64 @@ function renderAppointmentsList(appointments) {
   });
 }
 
-function renderBookingForm(){
+function renderBookingForm() {
   const formEl = document.createElement("form");
   formEl.className = "booking_form";
   mainEl.append(formEl);
-  formEl.addEventListener("submit", event =>{
-    event.preventDefault()
+  formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
     console.log("submitted");
-    // const appointmentToCreate = {
-    //   jobId: 1,
-    //   date: "2021-08-10",
-    //   time: "16:30"
-    // };
-    
-    // const fetchOptions = {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(appointmentToCreate)
-    // };
-    
-    // fetch("http://localhost:3000/appointments", fetchOptions)
-    //   .then((res) => res.json())
-    //   .then((newAppointment) => {
-    //     console.log("Inside POST Fetch: ", newAppointment);
-    
-    //     state = {
-    //       ...state,
-    //       appointments:[
-          
-    //       ]
-    //     }
-    
-    //     renderAppointmentsList(state.appointments);
-    //   });
-  
-    // })
-  })
+
+    const appointmentToCreate = {
+      jobId: state.selectedJob.id,
+      date: formEl.querySelector("#date").value,
+      time: formEl.querySelector("#time").value,
+    };
+
+    console.log(
+      "document.querySelector for date",
+      document.querySelector("#date")
+    );
+
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(appointmentToCreate),
+    };
+
+    fetch("http://localhost:3000/appointments", fetchOptions)
+      .then((res) => res.json())
+      .then((newAppointment) => {
+        console.log("newAppointment inside POST Fetch: ", newAppointment);
+
+        const foundJob = state.jobs.find(
+          (job) => job.id === newAppointment.jobId
+        );
+
+        const newAppointmentWithJobObj = {
+          ...newAppointment,
+          job: foundJob,
+        };
+
+        state = {
+          ...state,
+          appointments: [...state.appointments, newAppointmentWithJobObj],
+        };
+
+        console.log("State inside POST fetch: ", state);
+
+        renderAppointmentsList(state.appointments);
+      });
+  });
 
   const dateInputEl = document.createElement("input");
   dateInputEl.setAttribute("type", "date");
   dateInputEl.setAttribute("id", "date");
   dateInputEl.setAttribute("name", "date");
   formEl.append(dateInputEl);
-  
+
   const timeInputEl = document.createElement("input");
   timeInputEl.setAttribute("type", "time");
   timeInputEl.setAttribute("id", "time");
@@ -341,5 +339,4 @@ function renderBookingForm(){
   confirmButtonEl.setAttribute("value", "Confirm Booking");
   confirmButtonEl.setAttribute("type", "submit");
   formEl.append(confirmButtonEl);
-
 }
