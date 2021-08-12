@@ -422,7 +422,9 @@ function renderBookingForm() {
 
 function applyUserfilters(jobs) {
   const filteredByPosition = filterByPosition(jobs);
-  return filteredByPosition;
+  const filteredByLevel = filterByLevel(filteredByPosition);
+  const filteredBySearch = filterBySearch(filteredByLevel);
+  return filteredBySearch;
 }
 
 function filterByPosition(jobs) {
