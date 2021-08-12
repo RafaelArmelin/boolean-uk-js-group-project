@@ -168,6 +168,24 @@ function filterBySearch() {
   const searchFormElem = document.createElement("form");
   searchFormElem.id = "search-jobs-form";
   searchFormElem.setAttribute("autocomplete", "off");
+  searchFormElem.addEventListener("submit", (event)=>{
+    event.preventDefault();
+    console.log("submited");
+  
+  const searchValue = document.querySelector("#search-jobs").value;
+  console.log("search value: ", searchValue);
+
+  state = {
+    ...state,
+    filters: {
+      ...state.filters,
+      search: searchValue
+    }
+  }
+  console.log(state);
+
+  })
+
   filterSectionEl.append(searchFormElem);
 
   const searchBarInputElem = document.createElement("input");
