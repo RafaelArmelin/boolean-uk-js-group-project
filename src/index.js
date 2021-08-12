@@ -213,6 +213,7 @@ function renderFilterBySearch() {
       },
     };
     console.log(state);
+    renderJobList(state.jobs);
   });
 
   filterSectionEl.append(searchFormElem);
