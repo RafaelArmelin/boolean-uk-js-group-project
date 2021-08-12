@@ -309,3 +309,26 @@ function renderAppointmentsList(appointments) {
     appointmentCardEl.append(cancelButtonEl);
   });
 }
+
+function renderBookingForm(){
+  const formEl = document.createElement("form");
+  formEl.className = "booking_form";
+  mainEl.append(formEl);
+  const dateInputEl = document.createElement("input");
+  dateInputEl.setAttribute("type", "date");
+  dateInputEl.setAttribute("id", "date");
+  dateInputEl.setAttribute("name", "date");
+  formEl.append(dateInputEl);
+  
+  const timeInputEl = document.createElement("input");
+  timeInputEl.setAttribute("type", "time");
+  timeInputEl.setAttribute("id", "time");
+  timeInputEl.setAttribute("name", "time");
+  formEl.append(timeInputEl);
+
+  const confirmButtonEl = document.createElement("input");
+  confirmButtonEl.setAttribute("value", "Confirm Booking");
+  confirmButtonEl.setAttribute("type", "submit");
+  formEl.append(confirmButtonEl);
+
+}
