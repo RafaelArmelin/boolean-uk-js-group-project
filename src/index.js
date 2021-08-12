@@ -272,9 +272,13 @@ function renderAppointmentsList(appointments) {
 }
 
 function renderBookingForm() {
+  const formWrapperEl = document.createElement("div");
+  formWrapperEl.className = "form-wrapper";
+  mainEl.append(formWrapperEl);
+
   const formEl = document.createElement("form");
   formEl.className = "booking_form";
-  mainEl.append(formEl);
+  formWrapperEl.append(formEl);
   formEl.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("submitted");
