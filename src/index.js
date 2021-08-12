@@ -5,6 +5,17 @@ console.log(rootEl);
 
 const mainEl = document.querySelector(".main_class");
 
+const filterSectionEl = document.createElement("div");
+filterSectionEl.className = "filter-section";
+mainEl.append(filterSectionEl);
+
+const filterFormsWrapperEl = document.createElement("div");
+filterFormsWrapperEl.className = "filter-forms-wrapper";
+filterSectionEl.append(filterFormsWrapperEl);
+
+const jobsSectionEl = document.createElement("div");
+mainEl.append(jobsSectionEl);
+
 // STATE OBJECT
 
 let state = {
@@ -35,14 +46,6 @@ fetch("http://localhost:3000/jobs")
 
 // TODO: Create header element and append to rootEl
 
-const filterSectionEl = document.createElement("div");
-filterSectionEl.className = "filter-section";
-mainEl.append(filterSectionEl);
-
-const filterFormsWrapperEl = document.createElement("div");
-filterFormsWrapperEl.className = "filter-forms-wrapper";
-filterSectionEl.append(filterFormsWrapperEl);
-
 function renderFilterSection() {
   renderFilterByTechnologyForm();
   renderFilterByPositionForm();
@@ -70,6 +73,7 @@ function renderFilterByPositionForm() {
       },
     };
     console.log(state);
+    renderJobList(state.jobs);
   });
   positionFormEl.append(positionSelectEl);
 
@@ -154,9 +158,9 @@ function renderFilterByTechnologyForm() {
     inputEl.setAttribute("type", "checkbox");
     inputEl.setAttribute("name", "technology");
     inputEl.setAttribute("value", `${technology}`);
-    inputEl.addEventListener("change", (event)=>{
+    inputEl.addEventListener("change", (event) => {
       console.log("change", event.target.value);
-      if (event.target.checked){
+      if (event.target.checked) {
         state = {
           ...state,
           filters: {
@@ -164,19 +168,21 @@ function renderFilterByTechnologyForm() {
             technologies: [...state.filters.technologies, technology],
           },
         };
-      } else if (!event.target.checked){
-        const filteredTechnologies = state.filters.technologies.filter(technology => technology !== event.target.value);
+      } else if (!event.target.checked) {
+        const filteredTechnologies = state.filters.technologies.filter(
+          (technology) => technology !== event.target.value
+        );
         state = {
           ...state,
           filters: {
             ...state.filters,
-            technologies: filteredTechnologies
+            technologies: filteredTechnologies,
           },
         };
-      };
+      }
       console.log(state);
-      renderJobList(state.jobs)
-    })
+      renderJobList(state.jobs);
+    });
 
     technologyFormEl.append(inputEl);
 
@@ -222,14 +228,14 @@ function filterBySearch() {
 }
 
 function renderJobList(jobs) {
-  const divEl = document.createElement("div");
-  mainEl.append(divEl);
+  // to reset jobsSectionEl
+  jobsSectionEl.innerHTML = "";
 
   const listEl = document.createElement("ul");
   listEl.className = ("cardList", "center");
-  divEl.append(listEl);
+  jobsSectionEl.append(listEl);
 
-  const filteredJobs = applyUserfilters(state.jobs)
+  const filteredJobs = applyUserfilters(state.jobs);
 
   for (let i = 0; i < filteredJobs.length; i++) {
     const job = filteredJobs[i];
@@ -413,15 +419,14 @@ function renderBookingForm() {
   formEl.append(confirmButtonEl);
 }
 
-function applyUserfilters(jobs){
-
-  const filteredByPosition = filterByPosition(jobs)
+function applyUserfilters(jobs) {
+  const filteredByPosition = filterByPosition(jobs);
   return filteredByPosition;
 }
 
-function filterByPosition(jobs){
-  if (state.filters.position === ""){
+function filterByPosition(jobs) {
+  if (state.filters.position === "") {
     return jobs;
   }
-  const filteredJobs = jobs.filter(job => job.position === state.filters.position)
+  return jobs.filter((job) => job.position === state.filters.position);
 }
