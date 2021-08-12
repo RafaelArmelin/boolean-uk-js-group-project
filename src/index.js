@@ -430,6 +430,12 @@ function filterByPosition(jobs) {
     return jobs;
   }
 
+  const filteredJobs = jobs.filter(
+    (job) => job.position === state.filters.position
+  );
+  return filteredJobs;
+}
+
 function filterByLevel(jobs) {
   if (state.filters.level === "") {
     return jobs;
