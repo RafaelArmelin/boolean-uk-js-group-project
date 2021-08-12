@@ -62,6 +62,18 @@ function renderFilterByPositionForm() {
   const positionSelectEl = document.createElement("select");
   positionSelectEl.id = "positions";
   positionSelectEl.name = "positions";
+  positionFormEl.addEventListener("change", (event)=>{
+    console.log("change");
+    state = {
+      ...state,
+      filters: {
+        ...state.filters,
+        position: event.target.value
+      }
+
+    }
+    console.log(state);
+  })
   positionFormEl.append(positionSelectEl);
 
   const defaultOptionEl = document.createElement("option");
@@ -221,11 +233,12 @@ function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
   const asideEl = document.createElement("aside");
-  mainEl.append(asideEl);
+  rootEl.append(asideEl);
 
   const appointmentsWrapperEl = document.createElement("div");
   appointmentsWrapperEl.className = "appointment-wrapper";
   asideEl.append(appointmentsWrapperEl);
+  appointmentsWrapperEl.innerHTML = "";
 
   const ulEl = document.createElement("ul");
   appointmentsWrapperEl.append(ulEl);
@@ -272,13 +285,13 @@ function renderAppointmentsList(appointments) {
 }
 
 function renderBookingForm() {
-  const formWrapperEl = document.createElement("div");
-  formWrapperEl.className = "form-wrapper";
-  mainEl.append(formWrapperEl);
+  const bookingFormContainerEl = document.querySelector(".booking-form-container");
+  rootEl.append(bookingFormContainerEl);
+  bookingFormContainerEl.innerHTML = "";
 
   const formEl = document.createElement("form");
   formEl.className = "booking_form";
-  formWrapperEl.append(formEl);
+  bookingFormContainerEl.append(formEl);
   formEl.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("submitted");
