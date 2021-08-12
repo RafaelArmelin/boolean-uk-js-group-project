@@ -3,9 +3,7 @@
 const rootEl = document.querySelector("#root");
 console.log(rootEl);
 
-const mainEl = document.createElement("main");
-mainEl.className = "main_class";
-rootEl.append(mainEl);
+const mainEl = document.querySelector(".main_class");
 
 // STATE OBJECT
 
@@ -46,9 +44,9 @@ filterFormsWrapperEl.className = "filter-forms-wrapper";
 filterSectionEl.append(filterFormsWrapperEl);
 
 function renderFilterSection() {
+  renderFilterByTechnologyForm();
   renderFilterByPositionForm();
   renderFilterByLevelForm();
-  renderFilterByTechnologyForm();
   filterBySearch();
 }
 
@@ -62,18 +60,17 @@ function renderFilterByPositionForm() {
   const positionSelectEl = document.createElement("select");
   positionSelectEl.id = "positions";
   positionSelectEl.name = "positions";
-  positionFormEl.addEventListener("change", (event)=>{
+  positionFormEl.addEventListener("change", (event) => {
     console.log("change");
     state = {
       ...state,
       filters: {
         ...state.filters,
-        position: event.target.value
-      }
-
-    }
+        position: event.target.value,
+      },
+    };
     console.log(state);
-  })
+  });
   positionFormEl.append(positionSelectEl);
 
   const defaultOptionEl = document.createElement("option");
@@ -100,17 +97,17 @@ function renderFilterByLevelForm() {
   const levelSelectEl = document.createElement("select");
   levelSelectEl.id = "levels";
   levelSelectEl.name = "levels";
-  levelSelectEl.addEventListener("change", (event)=>{
+  levelSelectEl.addEventListener("change", (event) => {
     console.log("change");
     state = {
       ...state,
       filters: {
         ...state.filters,
-        level: event.target.value
-      }
-    }
+        level: event.target.value,
+      },
+    };
     console.log(state);
-  })
+  });
   levelFormEl.append(levelSelectEl);
 
   const defaultOptionEl = document.createElement("option");
@@ -153,6 +150,16 @@ function renderFilterByTechnologyForm() {
     "nodejs",
   ];
   technologies.forEach((technology) => {
+    const inputEl = document.createElement("input");
+    inputEl.setAttribute("type", "checkbox");
+    inputEl.setAttribute("name", "technology");
+    inputEl.setAttribute("value", `${technology}`);
+
+    technologyFormEl.append(inputEl);
+
+    const inputLabel = document.createElement("label");
+    inputLabel.setAttribute("for", "technology");
+    inputLabel.innerText = technology;
     technologyFormEl.append(inputLabel);
   });
 }
@@ -161,23 +168,22 @@ function filterBySearch() {
   const searchFormElem = document.createElement("form");
   searchFormElem.id = "search-jobs-form";
   searchFormElem.setAttribute("autocomplete", "off");
-  searchFormElem.addEventListener("submit", (event)=>{
+  searchFormElem.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log("submited");
-  
-  const searchValue = document.querySelector("#search-jobs").value;
-  console.log("search value: ", searchValue);
 
-  state = {
-    ...state,
-    filters: {
-      ...state.filters,
-      search: searchValue
-    }
-  }
-  console.log(state);
+    const searchValue = document.querySelector("#search-jobs").value;
+    console.log("search value: ", searchValue);
 
-  })
+    state = {
+      ...state,
+      filters: {
+        ...state.filters,
+        search: searchValue,
+      },
+    };
+    console.log(state);
+  });
 
   filterSectionEl.append(searchFormElem);
 
@@ -307,7 +313,9 @@ function renderAppointmentsList(appointments) {
 }
 
 function renderBookingForm() {
-  const bookingFormContainerEl = document.querySelector(".booking-form-container");
+  const bookingFormContainerEl = document.querySelector(
+    ".booking-form-container"
+  );
   rootEl.append(bookingFormContainerEl);
   bookingFormContainerEl.innerHTML = "";
 
