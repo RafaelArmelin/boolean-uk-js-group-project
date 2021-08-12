@@ -16,6 +16,9 @@ filterSectionEl.append(filterFormsWrapperEl);
 const jobsSectionEl = document.createElement("div");
 mainEl.append(jobsSectionEl);
 
+const appointmentsContainerEl = document.createElement("aside");
+rootEl.append(appointmentsContainerEl);
+
 // STATE OBJECT
 
 let state = {
@@ -293,13 +296,11 @@ function renderJobList(jobs) {
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
-  const asideEl = document.createElement("aside");
-  rootEl.append(asideEl);
+  appointmentsContainerEl.innerHTML = "";
 
   const appointmentsWrapperEl = document.createElement("div");
   appointmentsWrapperEl.className = "appointment-wrapper";
-  asideEl.append(appointmentsWrapperEl);
-  appointmentsWrapperEl.innerHTML = "";
+  appointmentsContainerEl.append(appointmentsWrapperEl);
 
   const ulEl = document.createElement("ul");
   appointmentsWrapperEl.append(ulEl);
