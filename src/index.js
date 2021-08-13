@@ -342,6 +342,17 @@ function renderAppointmentsList(appointments) {
     const cancelButtonEl = document.createElement("button");
     cancelButtonEl.className = "cancel-button";
     cancelButtonEl.innerText = "Cancel";
+    cancelButtonEl.addEventListener("click", (event) => {
+      console.log("clicked");
+
+      fetch("http://localhost:3000/appointments", {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((appointmentToDelete) => {
+          console.log(appointmentToDelete);
+        });
+    });
     appointmentCardEl.append(cancelButtonEl);
   });
 }
