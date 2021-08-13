@@ -17,11 +17,10 @@ const filterFormsWrapperEl = document.createElement("div");
 filterFormsWrapperEl.className = "filter-forms-wrapper";
 filterSectionEl.append(filterFormsWrapperEl);
 
-const jobsSectionEl = document.createElement("div");
-mainEl.append(jobsSectionEl);
-
 const asideEl = document.createElement("aside");
-rootEl.append(asideEl);
+asideEl.className = "main_appointment";
+asideEl.innerHTML = "My Appointments";
+mainEl.append(asideEl);
 
 // STATE OBJECT
 
@@ -50,8 +49,6 @@ fetch("http://localhost:3000/jobs")
   });
 
 // RENDER FUNCTIONS
-
-// TODO: Create header element and append to rootEl
 
 function renderFilterSection() {
   renderFilterByTechnologyForm();
@@ -234,16 +231,8 @@ function renderFilterBySearch() {
     "Search by position or technology"
   );
   searchFormElem.append(searchBarInputElem);
+  rootEl.insertBefore(searchFormElem, rootEl.childNodes[1]);
 }
-const searchBarInputElem = document.createElement("input");
-searchBarInputElem.id = "search-jobs";
-searchBarInputElem.setAttribute("name", "search-jobs");
-searchBarInputElem.setAttribute("type", "text");
-searchBarInputElem.setAttribute(
-  "placeholder",
-  "Search by position or language"
-);
-rootEl.insertBefore(searchBarInputElem, rootEl.childNodes[1]);
 
 const divEl = document.createElement("div");
 divEl.className = "main_content";
@@ -251,11 +240,11 @@ mainEl.append(divEl);
 
 function renderJobList(jobs) {
   // to reset jobsSectionEl
-  jobsSectionEl.innerHTML = "";
+  divEl.innerHTML = "";
 
   const listEl = document.createElement("ul");
   listEl.className = ("cardList", "center");
-  jobsSectionEl.append(listEl);
+  divEl.append(listEl);
 
   const filteredJobs = applyUserfilters(state.jobs);
 
@@ -310,19 +299,16 @@ function renderJobList(jobs) {
     });
   }
 }
-const asideEl = document.createElement("aside");
-asideEl.className = "main_appointment";
-asideEl.innerHTML = "My Appointments";
-mainEl.append(asideEl);
+
+// FILTER FUNCTIONS
 
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
 
-  asideEl.innerHTML = "";
-
   const appointmentsWrapperEl = document.createElement("div");
   appointmentsWrapperEl.className = "appointment-wrapper";
   asideEl.append(appointmentsWrapperEl);
+  appointmentsWrapperEl.innerHTML = "";
 
   const ulEl = document.createElement("ul");
   appointmentsWrapperEl.append(ulEl);
