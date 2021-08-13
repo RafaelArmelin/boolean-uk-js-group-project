@@ -364,12 +364,26 @@ function renderAppointmentsList(appointments) {
     cancelButtonEl.addEventListener("click", (event) => {
       console.log("clicked");
 
-      fetch("http://localhost:3000/appointments", {
+      fetch(`http://localhost:3000/appointments/${appointment.id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((appointmentToDelete) => {
-          console.log(appointmentToDelete);
+          console.log(
+            "appointmentToDelete: ",
+            appointmentToDelete,
+            appointment.id
+          );
+
+          const filteredAppointments = state.appointments.filter(
+            (obj) => obj.id !== appointment.id
+          );
+
+          state = {
+            ...state,
+            appointments: filteredAppointments,
+          };
+          renderAppointmentsList(state.appointments);
         });
     });
     appointmentCardEl.append(cancelButtonEl);
