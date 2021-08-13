@@ -10,10 +10,7 @@
         "max": 120000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "react"
-      ],
+      "technologies": ["javascript", "react"],
       "experienceLevel": "junior",
       "timeWhenPosted": 8
     },
@@ -27,11 +24,7 @@
         "max": 60000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "react",
-        "angular"
-      ],
+      "technologies": ["javascript", "react", "angular"],
       "experienceLevel": "junior",
       "timeWhenPosted": 19
     },
@@ -45,10 +38,7 @@
         "max": 95000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "java",
-        "mysql"
-      ],
+      "technologies": ["java", "mysql"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 2
     },
@@ -62,11 +52,7 @@
         "max": 200000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "php",
-        "react"
-      ],
+      "technologies": ["javascript", "php", "react"],
       "experienceLevel": "senior",
       "timeWhenPosted": 6
     },
@@ -80,10 +66,7 @@
         "max": 150000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "node",
-        "react"
-      ],
+      "technologies": ["node", "react"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 1
     },
@@ -97,11 +80,7 @@
         "max": 120000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "typescript",
-        "nodejs"
-      ],
+      "technologies": ["javascript", "typescript", "nodejs"],
       "experienceLevel": "senior",
       "timeWhenPosted": 4
     },
@@ -115,10 +94,7 @@
         "max": 120000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "react"
-      ],
+      "technologies": ["javascript", "react"],
       "experienceLevel": "junior",
       "timeWhenPosted": 8
     },
@@ -132,11 +108,7 @@
         "max": 60000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "react",
-        "angular"
-      ],
+      "technologies": ["javascript", "react", "angular"],
       "experienceLevel": "junior",
       "timeWhenPosted": 19
     },
@@ -150,10 +122,7 @@
         "max": 95000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "java",
-        "mysql"
-      ],
+      "technologies": ["java", "mysql"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 2
     },
@@ -167,11 +136,7 @@
         "max": 200000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "php",
-        "react"
-      ],
+      "technologies": ["javascript", "php", "react"],
       "experienceLevel": "senior",
       "timeWhenPosted": 6
     },
@@ -185,10 +150,7 @@
         "max": 150000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "node",
-        "react"
-      ],
+      "technologies": ["node", "react"],
       "experienceLevel": "mid-level",
       "timeWhenPosted": 1
     },
@@ -202,543 +164,10 @@
         "max": 120000
       },
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, fugit.",
-      "technologies": [
-        "javascript",
-        "typescript",
-        "nodejs"
-      ],
+      "technologies": ["javascript", "typescript", "nodejs"],
       "experienceLevel": "senior",
       "timeWhenPosted": 4
     }
   ],
-  "appointments": [
-    {
-      "id": 1,
-      "jobId": 1,
-      "date": "2021-08-10",
-      "time": "16:30"
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-10",
-      "time": "16:30",
-      "id": 2
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-10",
-      "time": "16:30",
-      "id": 3
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-10",
-      "time": "16:30",
-      "id": 4
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 5
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-13",
-      "time": "20:00",
-      "id": 6
-    },
-    {
-      "jobId": 6,
-      "date": "2021-08-26",
-      "time": "00:08",
-      "id": 7
-    },
-    {
-      "jobId": 3,
-      "date": "2021-09-03",
-      "time": "22:07",
-      "id": 8
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-26",
-      "time": "22:11",
-      "id": 9
-    },
-    {
-      "jobId": 5,
-      "date": "2021-08-18",
-      "time": "23:12",
-      "id": 10
-    },
-    {
-      "jobId": 3,
-      "date": "2021-08-19",
-      "time": "18:10",
-      "id": 11
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-13",
-      "time": "18:00",
-      "id": 12
-    },
-    {
-      "jobId": 3,
-      "date": "2021-08-16",
-      "time": "12:15",
-      "id": 13
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-13",
-      "time": "21:14",
-      "id": 14
-    },
-    {
-      "jobId": 2,
-      "date": "2021-08-20",
-      "time": "00:17",
-      "id": 15
-    },
-    {
-      "jobId": 2,
-      "date": "2021-08-20",
-      "time": "00:17",
-      "id": 16
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-19",
-      "time": "23:21",
-      "id": 17
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-21",
-      "time": "21:22",
-      "id": 18
-    },
-    {
-      "jobId": 1,
-      "date": "2021-09-03",
-      "time": "23:24",
-      "id": 19
-    },
-    {
-      "jobId": 5,
-      "date": "2021-08-26",
-      "time": "18:24",
-      "id": 20
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "01:47",
-      "id": 21
-    },
-    {
-      "jobId": 6,
-      "date": "2021-08-26",
-      "time": "00:46",
-      "id": 22
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-13",
-      "time": "02:42",
-      "id": 23
-    },
-    {
-      "jobId": 4,
-      "date": "2021-08-20",
-      "time": "00:43",
-      "id": 24
-    },
-    {
-      "jobId": 2,
-      "date": "2021-08-20",
-      "time": "04:49",
-      "id": 25
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-14",
-      "time": "04:52",
-      "id": 26
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-19",
-      "time": "04:46",
-      "id": 27
-    },
-    {
-      "jobId": 4,
-      "date": "2021-08-21",
-      "time": "05:33",
-      "id": 28
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-28",
-      "time": "03:47",
-      "id": 29
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "07:53",
-      "id": 30
-    },
-    {
-      "jobId": 2,
-      "date": "2021-08-27",
-      "time": "06:56",
-      "id": 31
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "05:02",
-      "id": 32
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-19",
-      "time": "05:02",
-      "id": 33
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 34
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-28",
-      "time": "04:32",
-      "id": 35
-    },
-    {
-      "jobId": 5,
-      "date": "2021-08-20",
-      "time": "05:33",
-      "id": 36
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "06:36",
-      "id": 37
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "06:36",
-      "id": 38
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "06:36",
-      "id": 39
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "06:36",
-      "id": 40
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-28",
-      "time": "07:48",
-      "id": 41
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-28",
-      "time": "07:48",
-      "id": 42
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-14",
-      "time": "05:47",
-      "id": 43
-    },
-    {
-      "jobId": 3,
-      "date": "2021-08-20",
-      "time": "06:50",
-      "id": 44
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-27",
-      "time": "08:14",
-      "id": 45
-    },
-    {
-      "jobId": 5,
-      "date": "2021-08-27",
-      "time": "06:14",
-      "id": 46
-    },
-    {
-      "jobId": 2,
-      "date": "2021-08-27",
-      "time": "07:23",
-      "id": 47
-    },
-    {
-      "jobId": 5,
-      "date": "2021-08-26",
-      "time": "07:24",
-      "id": 48
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 49
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 50
-    },
-    {
-      "jobId": 3,
-      "date": "",
-      "time": "",
-      "id": 51
-    },
-    {
-      "jobId": 3,
-      "date": "",
-      "time": "",
-      "id": 52
-    },
-    {
-      "jobId": 3,
-      "date": "",
-      "time": "",
-      "id": 53
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 54
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 55
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 56
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 57
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 58
-    },
-    {
-      "jobId": 3,
-      "date": "",
-      "time": "",
-      "id": 59
-    },
-    {
-      "jobId": 3,
-      "date": "",
-      "time": "",
-      "id": 60
-    },
-    {
-      "jobId": 3,
-      "date": "",
-      "time": "",
-      "id": 61
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 62
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 63
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 64
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-18",
-      "time": "",
-      "id": 65
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-26",
-      "time": "09:59",
-      "id": 66
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 67
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-25",
-      "time": "09:00",
-      "id": 68
-    },
-    {
-      "jobId": 5,
-      "date": "2021-08-21",
-      "time": "10:03",
-      "id": 69
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-14",
-      "time": "11:00",
-      "id": 70
-    },
-    {
-      "jobId": 3,
-      "date": "2021-08-20",
-      "time": "12:00",
-      "id": 71
-    },
-    {
-      "jobId": 4,
-      "date": "2021-08-14",
-      "time": "14:15",
-      "id": 72
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 73
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 74
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 75
-    },
-    {
-      "jobId": 2,
-      "date": "",
-      "time": "",
-      "id": 76
-    },
-    {
-      "jobId": 4,
-      "date": "",
-      "time": "",
-      "id": 77
-    },
-    {
-      "jobId": 4,
-      "date": "",
-      "time": "",
-      "id": 78
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-21",
-      "time": "17:25",
-      "id": 79
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-21",
-      "time": "17:25",
-      "id": 80
-    },
-    {
-      "jobId": 4,
-      "date": "",
-      "time": "",
-      "id": 81
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 82
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 83
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 84
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 85
-    },
-    {
-      "jobId": 1,
-      "date": "",
-      "time": "",
-      "id": 86
-    },
-    {
-      "jobId": 1,
-      "date": "2021-08-15",
-      "time": "18:41",
-      "id": 87
-    },
-    {
-      "jobId": 7,
-      "date": "2021-08-17",
-      "time": "18:41",
-      "id": 88
-    }
-  ]
+  "appointments": []
 }
