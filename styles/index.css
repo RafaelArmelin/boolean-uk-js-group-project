@@ -1,6 +1,5 @@
 #root {
   display: grid;
-  min-height: 100vh;
 }
 
 .appointment-card {
@@ -25,8 +24,8 @@
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
-  max-height: 300px;
-  width: 100px;
+  height: 300px;
+  width: 200px;
 }
 
 .filter-forms-wrapper {
@@ -127,12 +126,12 @@
   background-image: url(/src/header.jpeg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  min-height: 200px;
+  height: 30vh;
 }
 
 .main_class {
   display: grid;
-  grid-template-columns: 10% 72% 18%;
+  grid-template-columns: auto 1fr auto;
 }
 
 .main_content {
