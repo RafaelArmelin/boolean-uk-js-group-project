@@ -158,9 +158,9 @@ function renderFilterByTechnologyForm() {
     inputEl.setAttribute("type", "checkbox");
     inputEl.setAttribute("name", "technology");
     inputEl.setAttribute("value", `${technology}`);
-    inputEl.addEventListener("change", (event)=>{
+    inputEl.addEventListener("change", (event) => {
       console.log("change", event.target.value);
-      if (event.target.checked){
+      if (event.target.checked) {
         state = {
           ...state,
           filters: {
@@ -168,19 +168,21 @@ function renderFilterByTechnologyForm() {
             technologies: [...state.filters.technologies, technology],
           },
         };
-      } else if (!event.target.checked){
-        const filteredTechnologies = state.filters.technologies.filter(technology => technology !== event.target.value);
+      } else if (!event.target.checked) {
+        const filteredTechnologies = state.filters.technologies.filter(
+          (technology) => technology !== event.target.value
+        );
         state = {
           ...state,
           filters: {
             ...state.filters,
-            technologies: filteredTechnologies
+            technologies: filteredTechnologies,
           },
         };
-      };
+      }
       console.log(state);
       renderJobList(state.jobs);
-    })
+    });
 
     technologyFormEl.append(inputEl);
 
@@ -213,30 +215,29 @@ function filterBySearch() {
   });
 
   filterSectionEl.append(searchFormElem);
-
 }
 const searchBarInputElem = document.createElement("input");
-  searchBarInputElem.id = "search-jobs";
-  searchBarInputElem.setAttribute("name", "search-jobs");
-  searchBarInputElem.setAttribute("type", "text");
-  searchBarInputElem.setAttribute(
-    "placeholder",
-    "Search by position or language"
-  );
-  rootEl.insertBefore(searchBarInputElem, rootEl.childNodes[1]);
+searchBarInputElem.id = "search-jobs";
+searchBarInputElem.setAttribute("name", "search-jobs");
+searchBarInputElem.setAttribute("type", "text");
+searchBarInputElem.setAttribute(
+  "placeholder",
+  "Search by position or language"
+);
+rootEl.insertBefore(searchBarInputElem, rootEl.childNodes[1]);
 
-  const divEl = document.createElement("div");
-  divEl.className = "main_content";
-  mainEl.append(divEl);
+const divEl = document.createElement("div");
+divEl.className = "main_content";
+mainEl.append(divEl);
 
 function renderJobList(jobs) {
-  divEl.innerHTML="";
+  divEl.innerHTML = "";
 
   const listEl = document.createElement("ul");
   listEl.className = ("cardList", "center");
   divEl.append(listEl);
 
-  const filteredJobs = applyUserfilters(state.jobs)
+  const filteredJobs = applyUserfilters(state.jobs);
 
   for (let i = 0; i < filteredJobs.length; i++) {
     const job = filteredJobs[i];
@@ -277,7 +278,7 @@ function renderJobList(jobs) {
 
     const buttonEl = document.createElement("button");
     buttonEl.innerText = "Book Interview";
-    buttonEl.className = "book_interview_button"
+    buttonEl.className = "book_interview_button";
     listItemEl.append(buttonEl);
     buttonEl.addEventListener("click", () => {
       state = {
@@ -290,9 +291,9 @@ function renderJobList(jobs) {
   }
 }
 const asideEl = document.createElement("aside");
-  asideEl.className = "main_appointment"
-  asideEl.innerHTML = "My Appointments"
-  mainEl.append(asideEl);
+asideEl.className = "main_appointment";
+asideEl.innerHTML = "My Appointments";
+mainEl.append(asideEl);
 
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
@@ -431,15 +432,16 @@ function renderBookingForm() {
   appointmentCalendarEl.append(confirmButtonEl);
 }
 
-function applyUserfilters(jobs){
-
-  const filteredByPosition = filterByPosition(jobs)
+function applyUserfilters(jobs) {
+  const filteredByPosition = filterByPosition(jobs);
   return filteredByPosition;
 }
 
-function filterByPosition(jobs){
-  if (state.filters.position === ""){
+function filterByPosition(jobs) {
+  if (state.filters.position === "") {
     return jobs;
   }
-  const filteredJobs = jobs.filter(job => job.position === state.filters.position)
+  const filteredJobs = jobs.filter(
+    (job) => job.position === state.filters.position
+  );
 }
