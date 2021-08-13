@@ -48,6 +48,17 @@ fetch("http://localhost:3000/jobs")
     renderJobList(state.jobs);
   });
 
+fetch("http://localhost:3000/appointments")
+  .then((res) => res.json())
+  .then((appointmentsData) => {
+    console.log("Inside fetch appointmentsData: ", appointmentsData);
+    state = {
+      ...state,
+      appointments: appointmentsData,
+    };
+    renderAppointmentsList(state.appointments);
+  });
+
 // RENDER FUNCTIONS
 
 function renderFilterSection() {
