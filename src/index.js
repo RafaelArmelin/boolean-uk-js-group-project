@@ -3,6 +3,10 @@
 const rootEl = document.querySelector("#root");
 console.log(rootEl);
 
+const headerEl = document.createElement("header");
+headerEl.className = "header_class";
+rootEl.insertBefore(headerEl, rootEl.firstChild);
+
 const mainEl = document.querySelector(".main_class");
 
 const filterSectionEl = document.createElement("div");
@@ -231,6 +235,19 @@ function renderFilterBySearch() {
   );
   searchFormElem.append(searchBarInputElem);
 }
+const searchBarInputElem = document.createElement("input");
+searchBarInputElem.id = "search-jobs";
+searchBarInputElem.setAttribute("name", "search-jobs");
+searchBarInputElem.setAttribute("type", "text");
+searchBarInputElem.setAttribute(
+  "placeholder",
+  "Search by position or language"
+);
+rootEl.insertBefore(searchBarInputElem, rootEl.childNodes[1]);
+
+const divEl = document.createElement("div");
+divEl.className = "main_content";
+mainEl.append(divEl);
 
 function renderJobList(jobs) {
   // to reset jobsSectionEl
@@ -255,7 +272,7 @@ function renderJobList(jobs) {
     listItemEl.append(headingEl);
 
     const paragraphEl = document.createElement("p");
-    paragraphEl.innerText = `Position: ${job.jobPosition}`;
+    paragraphEl.innerHTML = `<span class = "styling">Position:</span> ${job.jobPosition}`;
     listItemEl.append(paragraphEl);
 
     const spanEl = document.createElement("span");
@@ -281,6 +298,7 @@ function renderJobList(jobs) {
 
     const buttonEl = document.createElement("button");
     buttonEl.innerText = "Book Interview";
+    buttonEl.className = "book_interview_button";
     listItemEl.append(buttonEl);
     buttonEl.addEventListener("click", () => {
       state = {
@@ -292,6 +310,10 @@ function renderJobList(jobs) {
     });
   }
 }
+const asideEl = document.createElement("aside");
+asideEl.className = "main_appointment";
+asideEl.innerHTML = "My Appointments";
+mainEl.append(asideEl);
 
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
@@ -357,11 +379,15 @@ function renderAppointmentsList(appointments) {
   });
 }
 
+const bookingSectionEl = document.createElement("section");
+bookingSectionEl.className = "booking-section";
+filterSectionEl.append(bookingSectionEl);
+
 function renderBookingForm() {
-  const bookingFormContainerEl = document.querySelector(
-    ".booking-form-container"
-  );
-  rootEl.append(bookingFormContainerEl);
+  bookingSectionEl.innerHTML = "";
+
+  const bookingFormContainerEl = document.createElement("div");
+  bookingSectionEl.append(bookingFormContainerEl);
   bookingFormContainerEl.innerHTML = "";
 
   const formEl = document.createElement("form");
@@ -412,25 +438,30 @@ function renderBookingForm() {
         console.log("State inside POST fetch: ", state);
 
         renderAppointmentsList(state.appointments);
+
+        state.appointments = [];
       });
   });
+
+  const appointmentCalendarEl = document.createElement("div");
+  formEl.append(appointmentCalendarEl);
 
   const dateInputEl = document.createElement("input");
   dateInputEl.setAttribute("type", "date");
   dateInputEl.setAttribute("id", "date");
   dateInputEl.setAttribute("name", "date");
-  formEl.append(dateInputEl);
+  appointmentCalendarEl.append(dateInputEl);
 
   const timeInputEl = document.createElement("input");
   timeInputEl.setAttribute("type", "time");
   timeInputEl.setAttribute("id", "time");
   timeInputEl.setAttribute("name", "time");
-  formEl.append(timeInputEl);
+  appointmentCalendarEl.append(timeInputEl);
 
   const confirmButtonEl = document.createElement("input");
   confirmButtonEl.setAttribute("value", "Confirm Booking");
   confirmButtonEl.setAttribute("type", "submit");
-  formEl.append(confirmButtonEl);
+  appointmentCalendarEl.append(confirmButtonEl);
 }
 
 function applyUserfilters(jobs) {
