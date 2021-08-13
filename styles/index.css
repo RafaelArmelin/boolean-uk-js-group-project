@@ -8,7 +8,7 @@
   padding: 10px;
 
   height: 200px;
-  width: 200px;
+  /* width: 200px; */
 
   border: 2px solid black;
 
@@ -18,24 +18,25 @@
 
 .appointment-wrapper {
   border: 2px solid black;
+  margin:10px;
 
-  position: absolute;
+  /* position: absolute;
   top: 70px;
-  right: 70px;
+  right: 70px; */
 }
 
 .filter-section {
   padding: 0 1rem;
 
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr;
   place-items: center;
   height: 25%;
 }
 
 .filter-forms-wrapper {
   display: grid;
-  grid-auto-flow: column;
+  /* grid-auto-flow: column; */
   gap: 1rem;
 }
 
@@ -80,12 +81,14 @@
 }
 
 .jobCard {
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 5px;
   /* margin: 1rem; */
   padding: 0.5rem;
   list-style-type: none;
-  /* background-color: rgb(250, 250, 240) */
+  background-color: #29576e;
+  color: white;
+
 }
 
 .jobCard h2 {
@@ -94,9 +97,6 @@
 }
 
 .center {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
   display: grid;
@@ -105,9 +105,11 @@
 }
 
 .technologies_bt_style {
-  border: 1px solid rgb(51, 50, 50);
+  border: 1px solid white;
   border-radius: 5px;
   padding: 2px;
+  text-align: center;
+
 }
 .div_container {
   display: grid;
@@ -115,4 +117,54 @@
   grid-template-columns: 1fr 1fr;
   gap: 5px;
   margin-bottom: 10px;
+}
+.header_class{
+    background-image: url(/src/header.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 200px;
+}
+
+.main_class{
+    display: grid;
+    grid-template-columns: 10% 72% 18%;
+}
+
+.main_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    order: 2;
+}
+
+#search-jobs{
+    height: 40px;
+    width: 400px;
+    margin: 20px auto;
+}
+.main_appointment{
+    order: 3;
+    border: 2px dashed black;
+    min-height: 200px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+    text-align: center;
+}
+.book_interview_button{
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family:'Roboto',sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+}
+.book_interview_button:hover{
+    background-color:#4095c6;
 }
