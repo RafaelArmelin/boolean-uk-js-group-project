@@ -256,20 +256,20 @@ function renderJobList(jobs) {
     listEl.append(listItemEl);
 
     const headingEl = document.createElement("h2");
-    headingEl.innerText = `Company: ${job.company}`;
+    headingEl.innerHTML = `<b><u>Company:</u></b> ${job.company}`;
 
     listItemEl.append(headingEl);
 
     const paragraphEl = document.createElement("p");
-    paragraphEl.innerHTML = `<span class = "styling">Position:</span> ${job.jobPosition}`;
+    paragraphEl.innerHTML = `<b><u>Position:</u></b> ${job.jobPosition}`;
     listItemEl.append(paragraphEl);
 
     const spanEl = document.createElement("span");
-    spanEl.innerText = `Salary: $${job.salary.min} - $${job.salary.max}`;
+    spanEl.innerHTML = `<b><u>Salary:</u></b> $${job.salary.min} - $${job.salary.max}`;
     listItemEl.append(spanEl);
 
     const descriptionEl = document.createElement("p");
-    descriptionEl.innerText = `Description: ${job.description}`;
+    descriptionEl.innerHTML = `<b><u>Description:</u></b> ${job.description}`;
     listItemEl.append(descriptionEl);
 
     const technologiesDivEl = document.createElement("div");
@@ -373,6 +373,7 @@ function renderBookingForm() {
   bookingSectionEl.innerHTML = "";
 
   const bookingFormContainerEl = document.createElement("div");
+  bookingFormContainerEl.className = "booking-form-container";
   bookingSectionEl.append(bookingFormContainerEl);
   bookingFormContainerEl.innerHTML = "";
 
@@ -447,6 +448,7 @@ function renderBookingForm() {
   const confirmButtonEl = document.createElement("input");
   confirmButtonEl.setAttribute("value", "Confirm Booking");
   confirmButtonEl.setAttribute("type", "submit");
+  confirmButtonEl.className = "confirm-button";
   appointmentCalendarEl.append(confirmButtonEl);
 }
 
