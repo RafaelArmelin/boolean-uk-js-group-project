@@ -313,12 +313,12 @@ function renderJobList(jobs) {
 
 // FILTER FUNCTIONS
 
+const appointmentsWrapperEl = document.createElement("div");
+appointmentsWrapperEl.className = "appointment-wrapper";
+asideEl.append(appointmentsWrapperEl);
+
 function renderAppointmentsList(appointments) {
   console.log("Inside renderAppointmentsList: ", appointments);
-
-  const appointmentsWrapperEl = document.createElement("div");
-  appointmentsWrapperEl.className = "appointment-wrapper";
-  asideEl.append(appointmentsWrapperEl);
   appointmentsWrapperEl.innerHTML = "";
 
   const ulEl = document.createElement("ul");
